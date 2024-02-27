@@ -15,10 +15,10 @@ class _HomeViewState extends State<HomeView> {
   String image = '';
   int currentIndex = 0;
 
-  String? selectedTechnology;
-  String? selectedBusiness;
-  String? selectedMarkets;
-  String? selectedManagement;
+  List<String> selectedTechnologies = [];
+  List<String> selectedBusiness = [];
+  List<String> selectedMarkets = [];
+  List<String> selectedManagement = [];
 
 
   void changeTab(int index) {
@@ -161,10 +161,10 @@ class _HomeViewState extends State<HomeView> {
                                                         height,
                                                         width,
                                                         'Artificial Intelligence',
-                                                        selectedTechnology == 'Artificial Intelligence',
+                                                        selectedTechnologies.contains('Artificial Intelligence'),
                                                             () {
                                                           setState(() {
-                                                            selectedTechnology = 'Artificial Intelligence';
+                                                            toggleSelectedTechnology('Artificial Intelligence');
                                                           });
                                                         },
                                                       ),
@@ -174,10 +174,10 @@ class _HomeViewState extends State<HomeView> {
                                                         height,
                                                         width,
                                                         'Blockchain',
-                                                        selectedTechnology == 'Blockchain',
+                                                        selectedTechnologies.contains('Blockchain'),
                                                             () {
                                                           setState(() {
-                                                            selectedTechnology = 'Blockchain';
+                                                            toggleSelectedTechnology('Blockchain');
                                                           });
                                                         },
                                                       ),
@@ -189,10 +189,10 @@ class _HomeViewState extends State<HomeView> {
                                                         height,
                                                         width,
                                                         'Cyber Security',
-                                                        selectedTechnology == 'Cyber Security',
+                                                        selectedTechnologies.contains('Cyber Security'),
                                                             () {
                                                           setState(() {
-                                                            selectedTechnology = 'Cyber Security';
+                                                            toggleSelectedTechnology('Cyber Security');
                                                           });
                                                         },
                                                       ),
@@ -201,10 +201,10 @@ class _HomeViewState extends State<HomeView> {
                                                         height,
                                                         width,
                                                         'Virtual Reality',
-                                                        selectedTechnology == 'Virtual Reality',
+                                                        selectedTechnologies.contains('Virtual Reality'),
                                                             () {
                                                           setState(() {
-                                                            selectedTechnology = 'Virtual Reality';
+                                                            toggleSelectedTechnology('Virtual Reality');
                                                           });
                                                         },
                                                       ),
@@ -238,26 +238,28 @@ class _HomeViewState extends State<HomeView> {
                                                         height,
                                                         width,
                                                         'Market Trends',
-                                                        selectedBusiness == 'Market Trends',
+                                                        selectedBusiness.contains('Market Trends'),
                                                             () {
                                                           setState(() {
-                                                            selectedBusiness = 'Market Trends';
+                                                            toggleSelectedBusiness('Market Trends');
                                                           });
                                                         },
                                                       ),
+
 
                                                       // Blockchain
                                                       buildSelectableContainer(
                                                         height,
                                                         width,
                                                         'Startups',
-                                                        selectedBusiness == 'Startups',
+                                                        selectedBusiness.contains('Startups'),
                                                             () {
                                                           setState(() {
-                                                            selectedBusiness = 'Startups';
+                                                            toggleSelectedBusiness('Startups');
                                                           });
                                                         },
                                                       ),
+
                                                     ],
                                                   ),
                                                   Column(
@@ -266,22 +268,23 @@ class _HomeViewState extends State<HomeView> {
                                                         height,
                                                         width,
                                                         'Entrepreneurship',
-                                                        selectedBusiness == 'Entrepreneurship',
+                                                        selectedBusiness.contains('Entrepreneurship'),
                                                             () {
                                                           setState(() {
-                                                            selectedBusiness = 'Entrepreneurship';
+                                                            toggleSelectedBusiness('Entrepreneurship');
                                                           });
                                                         },
                                                       ),
+
 
                                                       buildSelectableContainer(
                                                         height,
                                                         width,
                                                         'Investment Strategies',
-                                                        selectedBusiness == 'Investment Strategies',
+                                                        selectedBusiness.contains('Investment Strategies'),
                                                             () {
                                                           setState(() {
-                                                            selectedBusiness = 'Investment Strategies';
+                                                            toggleSelectedBusiness('Investment Strategies');
                                                           });
                                                         },
                                                       ),
@@ -315,26 +318,28 @@ class _HomeViewState extends State<HomeView> {
                                                         height,
                                                         width,
                                                         'Market Trend',
-                                                        selectedMarkets == 'Market Trend',
+                                                        selectedMarkets.contains('Market Trend'),
                                                             () {
                                                           setState(() {
-                                                            selectedMarkets = 'Market Trend';
+                                                            toggleSelectedMarket('Market Trend');
                                                           });
                                                         },
                                                       ),
+
 
                                                       // Blockchain
                                                       buildSelectableContainer(
                                                         height,
                                                         width,
                                                         'Startup',
-                                                        selectedMarkets == 'Startup',
+                                                        selectedMarkets.contains('Startup'),
                                                             () {
                                                           setState(() {
-                                                            selectedMarkets = 'Startup';
+                                                            toggleSelectedMarket('Startup');
                                                           });
                                                         },
                                                       ),
+
                                                     ],
                                                   ),
                                                   Column(
@@ -343,22 +348,23 @@ class _HomeViewState extends State<HomeView> {
                                                         height,
                                                         width,
                                                         'Entrepreneur',
-                                                        selectedMarkets == 'Entrepreneur',
+                                                        selectedMarkets.contains('Entrepreneur'),
                                                             () {
                                                           setState(() {
-                                                            selectedMarkets = 'Entrepreneur';
+                                                            toggleSelectedMarket('Entrepreneur');
                                                           });
                                                         },
                                                       ),
 
+
                                                       buildSelectableContainer(
                                                         height,
                                                         width,
-                                                        'Investment Strategy',
-                                                        selectedMarkets == 'Investment Strategy',
+                                                        'Investments Strategy',
+                                                        selectedMarkets.contains('Investments Strategy'),
                                                             () {
                                                           setState(() {
-                                                            selectedMarkets = 'Investment Strategy';
+                                                            toggleSelectedMarket('Investments Strategy');
                                                           });
                                                         },
                                                       ),
@@ -391,27 +397,29 @@ class _HomeViewState extends State<HomeView> {
                                                       buildSelectableContainer(
                                                         height,
                                                         width,
-                                                        'Market News',
-                                                        selectedManagement == 'Market News',
+                                                        'Market',
+                                                        selectedManagement.contains('Market'),
                                                             () {
                                                           setState(() {
-                                                            selectedManagement = 'Market News';
+                                                            toggleSelectedManagement('Market');
                                                           });
                                                         },
                                                       ),
+
 
                                                       // Blockchain
                                                       buildSelectableContainer(
                                                         height,
                                                         width,
-                                                        'Start ups',
-                                                        selectedManagement == 'Start ups',
+                                                        'Startup Idea',
+                                                        selectedManagement.contains('Startup Idea'),
                                                             () {
                                                           setState(() {
-                                                            selectedManagement = 'Start ups';
+                                                            toggleSelectedManagement('Startup Idea');
                                                           });
                                                         },
                                                       ),
+
                                                     ],
                                                   ),
                                                   Column(
@@ -420,28 +428,30 @@ class _HomeViewState extends State<HomeView> {
                                                         height,
                                                         width,
                                                         'Entrepreneurs',
-                                                        selectedManagement == 'Entrepreneurs',
+                                                        selectedManagement.contains('Entrepreneurs'),
                                                             () {
                                                           setState(() {
-                                                            selectedManagement = 'Entrepreneurs';
+                                                            toggleSelectedManagement('Entrepreneurs');
                                                           });
                                                         },
                                                       ),
 
+
                                                       buildSelectableContainer(
                                                         height,
                                                         width,
-                                                        'Investments Strategies',
-                                                        selectedManagement == 'Investments Strategies',
+                                                        'Investments Ideas',
+                                                        selectedManagement.contains('Investments Ideas'),
                                                             () {
                                                           setState(() {
-                                                            selectedManagement= 'Investments Strategies';
+                                                            toggleSelectedManagement('Investments Ideas');
                                                           });
                                                         },
                                                       ),
 
                                                     ],
                                                   ),
+
                                                 ],
                                               ),
                                             ),
@@ -858,7 +868,8 @@ class _HomeViewState extends State<HomeView> {
                                       ),
                                     ),
                                   ],
-                                )),
+                                ),
+                            ),
                           )
                         : Expanded(
                             child: SizedBox(
@@ -1352,5 +1363,32 @@ SizedBox(
       ],
     );
   }
-
+  void toggleSelectedTechnology(String technology) {
+    if (selectedTechnologies.contains(technology)) {
+      selectedTechnologies.remove(technology);
+    } else {
+      selectedTechnologies.add(technology);
+    }
+  }
+  void toggleSelectedBusiness(String technology) {
+    if (selectedBusiness.contains(technology)) {
+      selectedBusiness.remove(technology);
+    } else {
+      selectedBusiness.add(technology);
+    }
+  }
+  void toggleSelectedMarket(String technology) {
+    if (selectedMarkets.contains(technology)) {
+      selectedMarkets.remove(technology);
+    } else {
+      selectedMarkets.add(technology);
+    }
+  }
+  void toggleSelectedManagement(String technology) {
+    if (selectedManagement.contains(technology)) {
+      selectedManagement.remove(technology);
+    } else {
+      selectedManagement.add(technology);
+    }
+  }
 }

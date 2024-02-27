@@ -12,6 +12,7 @@ class RoutesName {
   static const String homeNavBar = 'home_nav_screen';
   static const String home = 'home_screen';
   static const String status = 'status_screen';
+  static const String profileGroup = 'profile_group_screen';
   static const String viewNews = 'view_news_screen';
   static const String search = 'search_screen';
   static const String group = 'group_screen';

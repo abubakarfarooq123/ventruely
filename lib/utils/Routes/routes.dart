@@ -12,6 +12,7 @@ import 'package:ventruely/view/home/view_new_view.dart';
 import 'package:ventruely/view/intro_sliders/intro_slider_1_view.dart';
 import 'package:ventruely/view/navbar_view.dart';
 import 'package:ventruely/view/notifications/notification_view.dart';
+import 'package:ventruely/view/profile/profile_group_view.dart';
 import 'package:ventruely/view/profile/profile_view.dart';
 import 'package:ventruely/view/search/search_view.dart';
 
@@ -60,6 +61,8 @@ class Routes{
         return MaterialPageRoute(builder: (context) => const StatusView());
       case RoutesName.viewNews:
         return MaterialPageRoute(builder: (context) => const ViewNewsView());
+      case RoutesName.profileGroup:
+        return MaterialPageRoute(builder: (context) => const ProfileGroupView());
 
        // Group Screens Routes
 
